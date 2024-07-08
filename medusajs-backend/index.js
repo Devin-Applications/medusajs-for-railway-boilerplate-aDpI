@@ -53,3 +53,6 @@ const loaders = require("@medusajs/medusa/dist/loaders/index").default
 
   await start()
 })()
+
+// Trigger redeployment
+// This comment is added to trigger a new deployment
