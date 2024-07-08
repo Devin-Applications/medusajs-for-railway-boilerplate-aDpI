@@ -8,6 +8,11 @@ const loaders = require("@medusajs/medusa/dist/loaders/index").default
     const app = express()
     const directory = process.cwd()
 
+    // Health check endpoint
+    app.get("/health", (req, res) => {
+      res.status(200).send("OK")
+    })
+
     try {
       const { container } = await loaders({
         directory,
