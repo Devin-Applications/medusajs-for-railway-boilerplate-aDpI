@@ -1,4 +1,5 @@
-import { Button, Heading } from "@medusajs/ui"
+import React from "react";
+import { Button, Heading } from "@medusajs/ui";
 
 const Hero = () => {
   return (
@@ -28,7 +29,7 @@ const Hero = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
