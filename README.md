@@ -16,13 +16,13 @@
 </p>
 
 <h2 align="center">
-  Medusajs open source ecommerce platform<br>
+  Devin-clothes e-commerce platform<br>
   <a href="https://railway.app/template/QvfPwp?referralCode=-Yg50p">one-click deploy on railway!</a>
 </h2>
 
 <h1 align="center">
-  Need help?<br>
-  <a href="https://funkyton.com/medusajs-free-fully-open-source-ecommerce-solution/">Step by step tutorial, with screenshots and video</a>
+  Welcome to Devin-clothes!<br>
+  Your one-stop shop for all your clothing needs.
 </h1>
 
 
@@ -44,48 +44,32 @@ Combine Medusa's modules for your commerce backend with the newest Next.js 14 fe
   </a>
 </p>
 
-## About this boilerplate
-This boilerplate is a monorepo consisting of snapshot of a medusajs backend and storefront app created with `npx create-medusa-app@latest` February 2024. Modified to be plug n' play deployable on [railway.app](https://railway.app?referralCode=-Yg50p)!
+## About Devin-clothes
+Devin-clothes is a modern e-commerce platform designed to provide a seamless shopping experience for clothing enthusiasts. Built with Medusa.js and Next.js, Devin-clothes offers a robust backend and a performant storefront, making it easy to manage products, orders, and customers.
 
+## Setup Instructions
+### Railway Setup
+1. Change the value of environment variables: `COOKIE_SECRET` and `JWT_SECRET`.
+2. Add your `cloud_name`, `api_key`, and `api_secret` to the environment variables in the Railway dashboard to enable Cloudinary in production.
 
-# medusajs-backend
+### Local Setup
+1. Install dependencies: `yarn`
+2. Rename `.env.template` to `.env`
+3. To connect to your online database from local, copy the `DATABASE_URL` value that has been auto-generated on Railway and add it to your `.env`
 
-### railway setup
-Please change the value of environtment variables: `COOCKIE_SECRET` and `JWT_SECRET`.
+### Requirements
+- **Postgres database** (automatically generated if using Railway template)
+- **Redis** (automatically generated if using Railway template)
 
-### local setup
-- Install dependencies `yarn`
-- Rename `.env.template` ->  `.env`
-- To connect to your online database, from local; copy the `DATABASE_URL` value that have been auto generated on railway, and add to your `.env`
+### Optional
+- **Cloudinary**: I highly recommend using a proper media service.
+  1. Sign up for a free account with [Cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/yhlpdo1vaw2mq1la0nks?t=default) and choose "developer API calls" type of user.
+  2. Add your `cloud_name`, `api_key`, and `api_secret` to `.env.local` to enable Cloudinary as a file service on the local dev environment.
+  3. Configure the same environment variables in your Railway dashboard to enable Cloudinary in production.
+  4. If the steps above are confusing, visit [https://medusajs.com/plugins/medusa-file-cloudinary/](https://medusajs.com/plugins/medusa-file-cloudinary/) for more setup details.
 
-### requirements
-- **postgres database** (will be automatically generated if using railway template)
-- **redis** (will be automatically generated if using railway template)
-
-### optional
- - **cloudinary**: I highly recommend using a proper media service.
-   1. Sign up a free account with [cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/yhlpdo1vaw2mq1la0nks?t=default) choose "developer API calls" type of user.
-   2. Add your `cloud_name`, `api_key` & `api_secret` to .env.local this will eneable Cloudinary as a file service on local dev environment
-   3. Configure the same environment variables in your railway dashboard to enable cloudinary in production.
-   4. If the steps above was confusin, visit [https://medusajs.com/plugins/medusa-file-cloudinary/](https://medusajs.com/plugins/medusa-file-cloudinary/) for more setup details. 
-
-### commands
+### Commands
 `cd medusajs-backend/`
-`yarn build` will compile app.
-`yarn dev` will start local admin dashboard app to manage products and orders etc.
-`yarn start` will start the backend server, needed for the storefront
-
-# medusa-storefront
-
-### local setup
-intall dependencies `yarn`
-Rename `.env.local.template` ->  `.env.local`
-
-### requirements
-- running backend `npm run start` - needed to fetch products data and more, to build nextjs pages.
-
-### commands
-`cd medusajs-storefront/`
-`yarn wait` will keep calling backend endpoint until a backend responds.
-`yarn build` will build the nextjs app - remember to start backend app prior to running this command.
-`yarn start` will serve the frontend web shop.
+`yarn build` will compile the app.
+`yarn dev` will start the local admin dashboard app to manage products and orders, etc.
+`yarn start` will start the backend server, needed for the storefront.

@@ -1,13 +1,14 @@
-import { headers } from "next/headers"
-import { Suspense } from "react"
+import React from "react";
+import { headers } from "next/headers";
+import { Suspense } from "react";
 
-import { listRegions } from "@lib/data"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CartButton from "@modules/layout/components/cart-button"
-import SideMenu from "@modules/layout/components/side-menu"
+import { listRegions } from "@lib/data";
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import CartButton from "@modules/layout/components/cart-button";
+import SideMenu from "@modules/layout/components/side-menu";
 
 export default async function Nav() {
-  const regions = await listRegions().then((regions) => regions)
+  const regions = await listRegions().then((regions) => regions);
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
@@ -24,7 +25,7 @@ export default async function Nav() {
               href="/"
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
             >
-              Medusa Store
+              Devin-clothes
             </LocalizedClientLink>
           </div>
 
@@ -62,5 +63,5 @@ export default async function Nav() {
         </nav>
       </header>
     </div>
-  )
+  );
 }
